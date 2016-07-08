@@ -1,0 +1,35 @@
+
+#include <iostream>
+   using std::iostream;
+   using std::ostream;
+   using std::istream;
+   using std::ios;
+   using std::streambuf;
+   using std::cout;
+   using std::cin;
+   using std::cerr;
+   using std::clog;
+   using std::ws;
+   using std::endl;
+   using std::ends;
+   using std::flush;
+   using std::boolalpha;
+   using std::noboolalpha;
+   using std::showbase;
+   using std::noshowbase;
+   using std::showpoint;
+   using std::noshowpoint;
+   using std::showpos;
+   using std::noshowpos;
+   using std::skipws;
+   using std::noskipws;
+   using std::uppercase;
+   using std::nouppercase;
+   using std::internal;
+   using std::left;
+   using std::right;
+   using std::dec;
+   using std::hex;
+   using std::oct;
+   using std::fixed;
+   using std::scientific;
