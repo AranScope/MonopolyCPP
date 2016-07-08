@@ -9,8 +9,7 @@ public:
 	monPlayer(monTile* startTilePointer, monDice* dicePointer);
 	monTile* get_current_tile();
 	void turn();
-	void give_money(int amount);
-	void take_money(int amount);
+	void change_money(int amount);
 	void set_money(int amount);
 	void move_to_tile(monTile* tile);
 	void move_forward(int amount);

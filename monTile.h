@@ -5,6 +5,7 @@
 	using std::string;
 
 class monPlayer;
+class monDeck;
 
 class monTile {
 	public:
@@ -20,8 +21,8 @@ class monTile {
 		void set_prev_tile(monTile* prev_tile);
 		
 		void set_name(string name);
-		void pass_action(monPlayer* player);
-		void stop_action(monPlayer* player);
+		virtual void pass_action(monPlayer* player);
+		virtual void stop_action(monPlayer* player);
 		
 		void print();
     
@@ -35,6 +36,8 @@ class monTile {
 class monPropertyTile: public monTile {
 	public:
 		monPropertyTile(string name);
+		virtual void pass_action(monPlayer* player) override;
+		virtual void stop_action(monPlayer* player) override;
 };
 
 class monUtilityTile: public monPropertyTile {
@@ -46,5 +49,13 @@ class monStationTile: public monPropertyTile {
 	public:
 		monStationTile(string name);
 };
+
+class monCardTile: public monTile {
+	public:
+		monCardTile(monDeck* deck);
+	
+	private:
+		monDeck* m_deck;
+}
 
 #endif

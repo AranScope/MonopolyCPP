@@ -2,8 +2,9 @@
 #include "monCard.h"
 #include "iostream.h"
 	
-monDeck::monDeck()
+monDeck::monDeck(monCard* card)
 {
+	m_top_card = card;
 }
 
 bool monDeck::is_empty()
@@ -18,3 +19,8 @@ monCard* monDeck::draw_card()
 	return top_card;
 }
 
+void monDeck::add_card(monCard* card)
+{
+	card -> set_next_card(m_top_card);
+	m_top_card = card;
+}

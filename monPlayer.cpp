@@ -26,14 +26,9 @@ void monPlayer::turn()
 	m_current_tile_pointer -> stop_action(this);
 }
 
-void monPlayer::give_money(int amount)
+void monPlayer::change_money(int amount)
 {
 	m_money += amount;
-}
-
-void monPlayer::take_money(int amount)
-{
-	m_money -= amount;
 }
 
 void monPlayer::set_money(int amount)

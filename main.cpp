@@ -10,8 +10,8 @@
 int main()
 {
 	monDice dice = monDice();
-	monTile first = monTile("Go");
-	monTile second = monTile("Old Kent Road");
+	monPropertyTile first = monPropertyTile("Go");
+	monPropertyTile second = monPropertyTile("Old Kent Road");
 	monTile third = monTile("Community Chest");
 	monTile fourth = monTile("Whitechapel Road");
 	monTile fifth = monTile("Income tax");
@@ -42,3 +42,8 @@ int main()
 	
 	return 0;
 }
+
+//change money
+//advance to
+//go back
+//get out of jail
