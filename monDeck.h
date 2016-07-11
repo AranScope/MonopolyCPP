@@ -11,6 +11,7 @@ public:
 	void add_card(monCard* card);
 private:
 	monCard* m_top_card;
+  monCard* m_bottom_card;
 };
 
 #endif

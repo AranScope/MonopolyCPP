@@ -5,6 +5,7 @@
 monDeck::monDeck(monCard* card)
 {
 	m_top_card = card;
+  m_bottom_card = card;
 }
 
 bool monDeck::is_empty()
@@ -14,13 +15,15 @@ bool monDeck::is_empty()
 
 monCard* monDeck::draw_card()
 {
-	monCard* top_card = m_top_card;
-	m_top_card = m_top_card -> next_card();
-	return top_card;
+	cout << "monDeck: Drawing card " << (m_top_card->get_name()) << endl;
+  monCard* top_card = m_top_card;
+  add_card(top_card);
+  m_top_card = m_top_card->next_card();
+  return top_card;
 }
 
 void monDeck::add_card(monCard* card)
 {
-	card -> set_next_card(m_top_card);
-	m_top_card = card;
+  m_bottom_card->set_next_card(card);
+  m_bottom_card = card;
 }

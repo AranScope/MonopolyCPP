@@ -35,9 +35,17 @@ class monTile {
 
 class monPropertyTile: public monTile {
 	public:
-		monPropertyTile(string name);
+		monPropertyTile(string name/*, int cost, int mortgage_value, int house_cost*/);
 		virtual void pass_action(monPlayer* player) override;
 		virtual void stop_action(monPlayer* player) override;
+    monPlayer* get_owner();
+    
+  private:
+    monPlayer* m_owner;
+    int m_cost;
+    int m_mortgage_value;
+    int m_house_cost;
+    int m_number_of_houses;
 };
 
 class monUtilityTile: public monPropertyTile {
@@ -52,10 +60,36 @@ class monStationTile: public monPropertyTile {
 
 class monCardTile: public monTile {
 	public:
-		monCardTile(monDeck* deck);
+		monCardTile(string name, monDeck* deck);
+		virtual void pass_action(monPlayer* player) override;
+		virtual void stop_action(monPlayer* player) override;
 	
 	private:
 		monDeck* m_deck;
-}
+};
+
+class monGoTile: public monTile {
+	public:
+		monGoTile();
+		virtual void pass_action(monPlayer* player) override;
+		virtual void stop_action(monPlayer* player) override;
+};
+
+class monJailTile: public monTile {
+	public:
+		monJailTile();
+		virtual void pass_action(monPlayer* player) override;
+		virtual void stop_action(monPlayer* player) override;
+};
+
+class monTaxTile: public monTile {
+	public:
+		monTaxTile(string name, int amount);
+		virtual void pass_action(monPlayer* player) override;
+		virtual void stop_action(monPlayer* player) override;
+  
+  private:
+    int m_amount;
+};
 
 #endif

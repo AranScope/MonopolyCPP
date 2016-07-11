@@ -22,3 +22,8 @@ void monCard::set_next_card(monCard* card)
 	m_next_card = card;
 }
 
+string monCard::get_name()
+{
+  return m_name;
+}
+

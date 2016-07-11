@@ -44,7 +44,7 @@ void monTile::print()
 
 void monTile::pass_action(monPlayer* player)
 {
-	cout << "monTile: Passing " << m_name << endl;
+	cout << "monTile: Moving to " << m_name << endl;
 }
 
 void monTile::stop_action(monPlayer* player)
